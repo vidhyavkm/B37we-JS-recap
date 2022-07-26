@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         async function getCurrency(){
+//     var response= await fetch('https://restcountries.com/v2/all')
+//     var data= await response.json()
+//     console.log(data)
+//     // console.log(data.currencies.code)
+
+//     data.filter(element=>{
+//         for(let item in element.currencies){
+//             // console.log(item)
+//             // console.log(element)
+//             if(element.currencies[item].code=="USD"){
+//                 return true
+//             }
+//         }
+//     }).map(element=>console.log(element.name))
+   
+// }
+// getCurrency()
+
+//print odd numbers in an array
+
+var arr = [1,2,3,4,5,6,7,8,9]
+//anonymous
+
+var odd = function(arr){
+    var result=arr.filter(element=> element%2!=0)
+    console.log(result)
+}
+odd(arr);
+
+//normal or named
+
+function odd() {
+    var result = arr.filter (element => element%2!=0)
+return result;
+}
+console.log(odd())
+
+//IIFE
+
+(function odd(arr){
+    for(var i=0;i<arr.length;i++){
+        // console.log(arr[i])
+        if(arr[i]%2!=0) 
+        console.log(arr[i])
+    }
+})
+([1,2,3,4,5,6,7,8,9])
+
+//Arrow
+
+var array=(arr)=>{
+for(var i=0;i<arr.length;i++){
+if(arr[i]%2!==0){
+console.log(arr[i])}
+}
+}
+array([1,2,3,4,5,6,7,8,9,10])
+
+//For loop
+var odd = function(arr){
+    // console.log(arr.length)
+    for(i=0;i<arr.length;i++){
+        // console.log(arr[i])
+        if(arr[i]%2!=0) 
+        console.log(arr[i])
+    }
+}
+odd(arr)
+    </script>
+</body>
+</html>

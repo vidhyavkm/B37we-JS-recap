@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //print the country name which has "USD" as its currency
+var request = new XMLHttpRequest();
+
+request.open('GET','https://restcountries.com/v2/all', true);
+
+request.send();
+
+request.onload = function(){
+
+    var data = JSON.parse(request.response);
+    console.log(data);
+
+data.filter(element=>{
+    // console.log(element)
+    for (let key in element.currencies){
+        // console.log(key)
+        if(element.currencies[key].code==="USD"){
+            console.log(element.name)
+        }
+    }
+})
+
+// var fun=data.filter((element)=>
+// element.currencies && element.currencies.USD).
+// map((element)=>
+// ({name:element.region,currencies:element.currencies.USD.name})); 
+// for(let i=0;i<fun.length;i++)
+// { console.log(fun[i]); }
+
+}
+    
+   
+
+    </script>
+
+</body>
+</html>
